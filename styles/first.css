@@ -57,22 +57,12 @@
 
 #signature path {
   fill: rgba(255, 255, 255, 0);
-  animation-delay: 1.2s;
+  animation-delay: 1.5s;
   stroke: #FFFFFF;
   stroke-width: 3;
   stroke-linecap: round;
   stroke-linejoin: round;
   stroke-miterlimit: 10;
-}
-
-#sDot {
-  stroke-dasharray: 1;
-  animation: sDot 2s 1 linear;
-}
-
-@keyframes sDot {
-  0% {stroke-dashoffset: 1;}
-  5% {stroke-dashoffset: 0;}
 }
 
 #sStroke {
@@ -81,7 +71,17 @@
 }
 
 @keyframes sStroke {
-  0%, 5% {stroke-dashoffset: -470;}
+  0% {stroke-dashoffset: 470;}
+  30% {stroke-dashoffset: 0;}
+}
+
+#sDot {
+  stroke-dasharray: 2;
+  animation: sDot 2s 1 linear;
+}
+
+@keyframes sDot {
+  0%, 30% {stroke-dashoffset: 2;}
   35% {stroke-dashoffset: 0;}
 }
 
