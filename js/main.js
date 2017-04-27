@@ -11,10 +11,4 @@ $(() => {
     .to($('header ul'), 0.5, {ease: Expo.easeInOut, opacity: 1, transform: 'translateY(1vh)'});
 
   sm = new ScrollMagic.Controller();
-  console.log('test');
-  header = new ScrollMagic.Scene({
-    offset: 0,
-    duration: 100
-  }).addTo(sm)
-    .on('update', event => console.log(event));
 });
