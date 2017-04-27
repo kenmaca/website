@@ -2,7 +2,7 @@ $(() => {
 
   // animate intro
   tl = new TimelineMax();
-  tl.to($('#cover'), 0.5, {opacity: 0.1}, 'startIntro')
+  tl.to($('#cover'), 0.5, {opacity: 0.2}, 'startIntro')
     .to($('#intro h1:nth-child(1)'), 0.5, {
       ease: Expo.easeInOut, opacity: 1, y: -50
     }, 'startIntro')
