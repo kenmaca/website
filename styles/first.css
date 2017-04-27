@@ -1,0 +1,129 @@
+#cover {
+  position: absolute;
+  top: 10%;
+  left: 5%;
+  right: 0;
+  bottom: 10%;
+  background-image: url('https://scontent.fyzd1-1.fna.fbcdn.net/v/t31.0-8/12998422_10156708730770063_8929250410279299745_o.jpg?oh=899a87ec974f60f1c1041014e5d06197&oe=5980FD13');
+  background-repeat: no-repeat;
+  background-position: 10% 50%;
+  filter: grayscale(100%);
+  opacity: 0;
+}
+
+@media screen and (max-width: 1200px) {
+  #cover {
+    background-position: 30% 50%;
+  }
+}
+
+#intro {
+  position: absolute;
+  top: 30%;
+  left: 0;
+  right: 20vh;
+  max-width: 600px;
+}
+
+@media screen and (max-width: 1200px) {
+  #intro {
+    right: 100px;
+  }
+}
+
+#intro h1 {
+  opacity: 0;
+}
+
+#intro .divider {
+  opacity: 0;
+  margin-top: 6vh;
+}
+
+/* animated signature */
+#signatureBox {
+  min-width: 200px;
+  width: 20%;
+  height: 5%;
+  position: absolute;
+  bottom: 10%;
+  right: 5%;
+}
+
+#signature {
+  overflow: visible;
+  opacity: 0;
+}
+
+#signature path {
+  fill: rgba(255, 255, 255, 0);
+  animation-delay: 1.5s;
+  stroke: #FFFFFF;
+  stroke-width: 3;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-miterlimit: 10;
+}
+
+#sDot {
+  stroke-dasharray: 1;
+  animation: sDot 2s 1 linear;
+}
+
+@keyframes sDot {
+  0% {stroke-dashoffset: 1;}
+  5% {stroke-dashoffset: 0;}
+}
+
+#sStroke {
+  stroke-dasharray: 471;
+  animation: sStroke 2s 1 ease-in;
+}
+
+@keyframes sStroke {
+  0%, 5% {stroke-dashoffset: -471;}
+  35% {stroke-dashoffset: 0;}
+}
+
+#sLetters {
+  stroke-width: 4 !important;
+  stroke-dasharray: 205;
+  animation: sLetters 2s 1 ease-in-out;
+}
+
+@keyframes sLetters {
+  0%, 35% {stroke-dashoffset: 205;}
+  75% {stroke-dashoffset: 0;}
+}
+
+#sM {
+  stroke-width: 4 !important;
+  stroke-dasharray: 177;
+  animation: sM 2s 1 ease-in;
+}
+
+@keyframes sM {
+  0%, 75% {stroke-dashoffset: 177;}
+  85% {stroke-dashoffset: 0;}
+}
+
+#sA {
+  stroke-width: 3 !important;
+  stroke-dasharray: 72;
+  animation: sA 2s 1 ease-in;
+}
+
+@keyframes sA {
+  0%, 85% {stroke-dashoffset: 72;}
+  95% {stroke-dashoffset: 0;}
+}
+
+#sK {
+  stroke-dasharray: 60;
+  animation: sK 2s 1 ease-in;
+}
+
+@keyframes sK {
+  0%, 95% {stroke-dashoffset: 60;}
+  100% {stroke-dashoffset: 0;}
+}

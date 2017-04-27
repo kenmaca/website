@@ -1,0 +1,11 @@
+#snowmobile {
+  background-image: url('https://scontent.fyzd1-1.fna.fbcdn.net/v/t1.0-9/12963760_10156708811385063_491450511305804729_n.jpg?oh=6d07e20c0aacd4e3fc0d516a0dd97b4f&oe=5977334E');
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-size: cover;
+}
+
+#second .divider {
+  border-color: #000000;
+  margin-bottom: 10vh;
+}

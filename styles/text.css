@@ -1,0 +1,61 @@
+.light {
+  font-weight: 200;
+}
+
+.medium {
+  font-weight: 400;
+}
+
+.heavy {
+  font-weight: 600;
+}
+
+.title {
+  font-size: 3vw;
+}
+
+@media screen and (min-width: 1200px) {
+  .title {
+    font-size: 38px;
+  }
+}
+
+.feature {
+  font-size: 10vw;
+  max-width: 400px;
+}
+
+@media screen and (max-height: 480px) {
+  .feature {
+    font-size: 32px;
+  }
+}
+
+@media screen and (min-height: 800px) {
+  .feature {
+    font-size: 60px;
+  }
+}
+
+.text {
+  font-size: 2vw;
+  line-height: 3.5vw;
+}
+
+@media screen and (max-width: 800px) {
+  .text {
+    font-size: 14px;
+    line-height: 30px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .text {
+    font-size: 20px;
+    line-height: 35px;
+  }
+}
+
+.print {
+  font-family: 'Vidaloka', serif !important;
+}
