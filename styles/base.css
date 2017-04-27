@@ -6,6 +6,7 @@ body {
 }
 
 header {
+  opacity: 0;
   position: fixed !important;
   padding: 1vh 0 3vh;
   top: 0;
