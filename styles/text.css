@@ -3,7 +3,7 @@
 }
 
 .medium {
-  font-weight: 400;
+  font-weight: 300;
 }
 
 .heavy {
@@ -16,7 +16,7 @@
 
 @media screen and (min-height: 1200px) {
   .title {
-    font-size: 38px;
+    font-size: 32px;
   }
 }
 
@@ -57,5 +57,5 @@
 }
 
 .print {
-  font-family: 'Vidaloka', serif !important;
+  font-family: 'Lusitana', serif !important;
 }
