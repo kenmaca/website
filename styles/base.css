@@ -39,8 +39,9 @@ header li:last-child {
 }
 
 header li a {
-  color: #FFFFFF;
+  color: #E9AC00;
   text-decoration: none;
+  text-transform: uppercase;
 }
 
 /* common blocks */
@@ -74,10 +75,10 @@ header li a {
 }
 
 .article a {
-  color: #222222;
+  color: #E9AC00;
   font-weight: 300;
   text-decoration: none;
-  border-bottom: 1px dotted rgba(0, 0, 0, 0.4);
+  border-bottom: 1px dotted #E9AC00;
 }
 
 .centered {
