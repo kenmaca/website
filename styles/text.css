@@ -11,17 +11,17 @@
 }
 
 .title {
-  font-size: 3vw;
+  font-size: 4vh;
 }
 
-@media screen and (min-width: 1200px) {
+@media screen and (min-height: 1200px) {
   .title {
     font-size: 38px;
   }
 }
 
 .feature {
-  font-size: 10vw;
+  font-size: 7vh;
   max-width: 400px;
 }
 
@@ -31,9 +31,9 @@
   }
 }
 
-@media screen and (min-height: 800px) {
+@media screen and (min-height: 1200px) {
   .feature {
-    font-size: 60px;
+    font-size: 50px;
   }
 }
 
