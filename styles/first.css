@@ -43,6 +43,7 @@
 /* animated signature */
 #signatureBox {
   min-width: 200px;
+  max-width: 500px;
   width: 20vw;
   height: 5vh;
   position: absolute;
