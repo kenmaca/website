@@ -43,10 +43,10 @@
 /* animated signature */
 #signatureBox {
   min-width: 200px;
-  width: 20%;
-  height: 5%;
+  width: 20vw;
+  height: 5vh;
   position: absolute;
-  bottom: 10%;
+  bottom: 10vh;
   right: 5%;
 }
 
@@ -57,7 +57,7 @@
 
 #signature path {
   fill: rgba(255, 255, 255, 0);
-  animation-delay: 1.5s;
+  animation-delay: 1.2s;
   stroke: #FFFFFF;
   stroke-width: 3;
   stroke-linecap: round;
@@ -76,12 +76,12 @@
 }
 
 #sStroke {
-  stroke-dasharray: 471;
+  stroke-dasharray: 470;
   animation: sStroke 2s 1 ease-in;
 }
 
 @keyframes sStroke {
-  0%, 5% {stroke-dashoffset: -471;}
+  0%, 5% {stroke-dashoffset: -470;}
   35% {stroke-dashoffset: 0;}
 }
 
