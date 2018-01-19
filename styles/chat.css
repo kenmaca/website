@@ -125,3 +125,10 @@ section.bubbles .to p {
   line-height: 1.2em;
   padding: 0.5rem;
 }
+
+/* image inline */
+section.bubbles .from .image,
+section.bubbles .to .image {
+  height: 20rem;
+  width: 20rem;
+}
