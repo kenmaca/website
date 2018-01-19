@@ -1,0 +1,127 @@
+
+/* credit: https://codepen.io/samuelkraft/pen/Farhl
+   with minor style modifications */
+section.bubbles div {
+  max-width: 200px;
+  word-wrap: break-word;
+  margin-bottom: 2px;
+}
+
+@media (min-width: 750px) {
+  section.bubbles div {
+    max-width: 450px;
+  }
+}
+
+/* continued bubbles without tail */
+section.bubbles div.end {
+  margin-bottom: 12px;
+}
+
+section.bubbles div:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+section.bubbles .clear {
+  clear: both;
+}
+
+/* name labels */
+section.bubbles .label {
+  position: relative;
+  padding: 0px 20px;
+  margin: 0;
+  color: #555555;
+}
+
+section.bubbles .label p {
+  margin-bottom: 0;
+  margin-top: 6px;
+}
+
+section.bubbles .label.me {
+  float: left;
+}
+
+section.bubbles .label.you {
+  float: right;
+}
+
+section.bubbles .to {
+  position: relative;
+  padding: 10px 20px;
+  color: white;
+  background: #0B93F6;
+  border-radius: 30px;
+  float: right;
+}
+
+section.bubbles .to.end:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  bottom: -2px;
+  right: -7px;
+  height: 25px;
+  border-right: 20px solid #0B93F6;
+  border-bottom-left-radius: 16px 14px;
+  -webkit-transform: translate(0, -2px);
+}
+
+section.bubbles .to.end:after {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  bottom: -2px;
+  right: -56px;
+  width: 26px;
+  height: 25px;
+  background: white;
+  border-bottom-left-radius: 10px;
+  -webkit-transform: translate(-30px, -2px);
+}
+
+section.bubbles .from {
+  position: relative;
+  padding: 10px 20px;
+  background: #E5E5EA;
+  border-radius: 30px;
+  color: black;
+  float: left;
+}
+
+section.bubbles .from.end:before {
+  content: "";
+  position: absolute;
+  z-index: 2;
+  bottom: -2px;
+  left: -7px;
+  height: 25px;
+  border-left: 20px solid #E5E5EA;
+  border-bottom-right-radius: 16px 14px;
+  -webkit-transform: translate(0, -2px);
+}
+
+section.bubbles .from.end:after {
+  content: "";
+  position: absolute;
+  z-index: 3;
+  bottom: -2px;
+  left: 4px;
+  width: 26px;
+  height: 25px;
+  background: white;
+  border-bottom-right-radius: 10px;
+  -webkit-transform: translate(-30px, -2px);
+}
+
+/* fix for skeleton issues */
+section.bubbles .from p,
+section.bubbles .to p {
+  margin-bottom: 0;
+  font-size: 1.6em;
+  line-height: 1.2em;
+  padding: 0.5rem;
+}
