@@ -1,148 +1,43 @@
-body {
-  padding: 0px;
-  margin: 0px;
-  font-family: 'Roboto', 'Helvetica', arial, sans-serif;
-  font-size: 2vh;
+
+/* base */
+div.page {
+  height: 600px;
 }
 
-header {
-  opacity: 0;
-  position: fixed !important;
-  padding: 1vh 0 3vh;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 99;
-}
-
-.logo {
-  width: 4vh;
-  height: 4vh;
-  opacity: 0;
-}
-
-header div {
-  height: auto !important;
-}
-
-header ul {
-  padding: 0;
-  opacity: 0;
-}
-
-header li {
-  display: inline;
-  margin-right: 3vw;
-}
-
-header li:last-child {
-  margin-right: 0px;
-}
-
-header li a {
-  color: #FFFFFF;
-  text-decoration: none;
-  text-transform: uppercase;
-}
-
-/* common blocks */
 .dark {
   background: #111111;
   color: #FFFFFF;
 }
 
-.debug {
-  background: rgba(255, 0, 0, 0.2) !important;
-}
-
-.transparent {
-  background: transparent;
-}
-
-.page {
-  display: flex;
-  width: 100%;
-  height: 95%;
-}
-
-.fixed {
-  max-width: 1920px;
-  width: 80%;
-  height: 90%;
-}
-
-.article {
-  padding: 30px;
-}
-
-.article a {
-  color: #E9AC00;
-  font-weight: 300;
-  text-decoration: none;
-  border-bottom: 1px dotted #E9AC00;
-}
-
-.centered {
-  position: relative;
-  margin: 0 auto;
-}
-
-.padded {
-  padding: 25px;
-}
-
-.sides {
-  padding-left: 45px;
-  padding-right: 45px;
-}
-
 .divider {
-  width: 4vw;
-  border-bottom: 0.5vw solid #FFFFFF;
+  width: 3rem;
+  border-bottom: 0.5rem solid #FFFFFF;
 }
 
-@media screen and (min-width: 1200px) {
-  .divider {
-    border-width: 5px;
-    width: 70px;
-  }
+/* per page */
+#hero {
+  position: absolute;
+  top: 0;
+  left: 10%;
+  right: 0;
+  bottom: 20%;
+  background-image: url('/assets/index/hero.jpg');
+  background-repeat: no-repeat;
+  background-position: 30% 35%;
+  filter: grayscale(100%);
+  opacity: 0;
 }
 
-.rounded {
-  border-radius: 50%;
+#intro {
+  margin: 10rem 0 30rem;
 }
 
-.spacing {
-  padding-top: 50px;
-  padding-bottom: 50px;
+#intro .divider {
+  margin-top: 5rem;
 }
 
-/* flexbox */
-.flex {
-  display: flex;
-}
-
-.spaced {
-  flex-direction: row;
-  justify-content: space-between;
-}
-
-.equal {
-  flex: 1;
-}
-
-.wide {
-  flex: 2;
-}
-
-.middle {
-  align-items: center;
-}
-
-.center {
-  justify-content: center;
-}
-
-.grow {
-  height: auto !important;
+#intro div,
+#intro p,
+#intro h4 {
+  opacity: 0;
 }

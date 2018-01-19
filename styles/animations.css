@@ -1,47 +1,5 @@
-/* base */
-div.page {
-  height: 600px;
-}
 
-.dark {
-  background: #111111;
-  color: #FFFFFF;
-}
-
-.divider {
-  width: 3rem;
-  border-bottom: 0.5rem solid #FFFFFF;
-}
-
-/* per page */
-#hero {
-  position: absolute;
-  top: 0;
-  left: 10%;
-  right: 0;
-  bottom: 20%;
-  background-image: url('/assets/index/hero.jpg');
-  background-repeat: no-repeat;
-  background-position: 30% 35%;
-  filter: grayscale(100%);
-  opacity: 0;
-}
-
-#intro {
-  margin: 10rem 0 30rem;
-}
-
-#intro .divider {
-  margin-top: 5rem;
-}
-
-#intro div,
-#intro p,
-#intro h4 {
-  opacity: 0;
-}
-
-/* animated signature */
+/* first page: animated signature */
 #signatureBox {
   width: 25rem;
   height: 11rem;
@@ -71,7 +29,7 @@ div.page {
 }
 
 @keyframes sStroke {
-  0% {stroke-dashoffset: -470;}
+  0% {stroke-dashoffset: 470;}
   30% {stroke-dashoffset: 0;}
 }
 
