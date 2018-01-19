@@ -45,10 +45,24 @@ div.page {
 /* second page */
 section.bubbles {
   margin: 2rem;
+  margin-bottom: 5rem;
 }
 
 @media (min-width: 750px) {
   section.bubbles {
-    margin: 2rem 30rem;
+    margin: 5rem 30rem;
+  }
+}
+
+/* third page */
+section.third.page {
+  padding: 2rem 0;
+  background: #6BBA44;
+}
+
+@media (min-width: 750px) {
+  section.third.page {
+    margin: 0 5rem;
+    padding: 5rem 0;
   }
 }
