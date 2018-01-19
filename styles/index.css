@@ -1,62 +1,52 @@
-#cover {
+/* base */
+div.page {
+  height: 600px;
+}
+
+.dark {
+  background: #111111;
+  color: #FFFFFF;
+}
+
+.divider {
+  width: 3rem;
+  border-bottom: 0.5rem solid #FFFFFF;
+}
+
+/* per page */
+#hero {
   position: absolute;
   top: 0;
-  left: 5%;
+  left: 10%;
   right: 0;
-  bottom: 10%;
+  bottom: 20%;
   background-image: url('/assets/index/hero.jpg');
   background-repeat: no-repeat;
-  background-position: 10% 50%;
+  background-position: 30% 35%;
   filter: grayscale(100%);
   opacity: 0;
 }
 
-@media screen and (max-width: 1200px) {
-  #cover {
-    background-position: 30% 50%;
-  }
-}
-
 #intro {
-  position: absolute;
-  top: 30%;
-  left: 0;
-  right: 20vh;
-  max-width: 600px;
-}
-
-@media screen and (max-width: 1200px) {
-  #intro {
-    right: 100px;
-  }
-}
-
-#intro h1 {
-  opacity: 0;
-}
-
-#intro .subtitle {
-  margin-bottom: 0;
-}
-
-#intro .feature {
-  margin-top: 10px;
-  margin-bottom: 10px;
+  margin: 10rem 0 30rem;
 }
 
 #intro .divider {
+  margin-top: 5rem;
+}
+
+#intro div,
+#intro p,
+#intro h4 {
   opacity: 0;
-  margin-top: 5vh;
 }
 
 /* animated signature */
 #signatureBox {
-  min-width: 200px;
-  max-width: 500px;
-  width: 20vw;
-  height: 5vh;
+  width: 25rem;
+  height: 11rem;
   position: absolute;
-  bottom: 10vh;
+  bottom: 8%;
   right: 5%;
 }
 
@@ -81,7 +71,7 @@
 }
 
 @keyframes sStroke {
-  0% {stroke-dashoffset: 470;}
+  0% {stroke-dashoffset: -470;}
   30% {stroke-dashoffset: 0;}
 }
 
