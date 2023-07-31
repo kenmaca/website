@@ -21,7 +21,7 @@ div.page {
   left: 10%;
   right: 0;
   bottom: 20%;
-  background-image: url('/assets/index/hero.jpg');
+  background-image: url('../assets/index/hero.jpg');
   background-repeat: no-repeat;
   background-position: 30% 35%;
   filter: grayscale(100%);
@@ -57,7 +57,7 @@ section.bubbles {
 /* third page */
 section.third.page {
   padding: 2rem 0;
-  background: #6BBA44;
+  background-image: linear-gradient(140deg, #9843C3, #512FB9 70%);
 }
 
 @media (min-width: 750px) {
@@ -67,9 +67,16 @@ section.third.page {
   }
 }
 
+#rent-advantage {
+  background-image: url('../assets/index/rent-advantage.jpeg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
 /* fourth page */
 #pizza {
-  background-image: url('/assets/index/pizza.jpg');
+  background-image: url('pizza.jpg');
   background-repeat: no-repeat;
   background-size: cover;
 }
