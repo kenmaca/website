@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { StyleSheet, View } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import {
@@ -38,6 +39,14 @@ export function Hero() {
   // Square corners fill the screen edge to edge at the top of the page; they
   // round off once scrolling reveals the page beneath.
   const scrolled = useScrolledPast(0.02);
+  // Matches the nav turning solid: from here the document background (which
+  // mobile browsers tint their status bar from) follows the theme again.
+  const pastHero = useScrolledPast(0.8);
+
+  useEffect(() => {
+    if (typeof document === 'undefined') return;
+    document.documentElement.toggleAttribute('data-km-past-hero', pastHero);
+  }, [pastHero]);
 
   return (
     <View
@@ -115,7 +124,7 @@ export function Hero() {
       </Container>
 
       {/* An unread iMessage "notification" — tapping it opens the conversation below. */}
-      <View style={styles.notification} pointerEvents="box-none">
+      <View style={[styles.notification, notificationWeb]} pointerEvents="box-none">
         {/* Once the conversation it previews is on screen, it's been "read". */}
         <View
           style={[styles.notificationInner, read && styles.notificationRead, transition(['opacity', 'transform'], 450)]}
@@ -138,7 +147,11 @@ export function Hero() {
   );
 }
 
-const heroHeightWeb = webStyle({ minHeight: '100svh' });
+// Toolbars-collapsed height, so nothing below peeks out behind mobile Safari's
+// bottom toolbar; the notification is lifted by the toolbar's area (100lvh - 100svh)
+// to stay in view above it.
+const heroHeightWeb = webStyle({ minHeight: '100lvh' });
+const notificationWeb = webStyle({ bottom: 'calc(24px + 100lvh - 100svh)' });
 const glowWeb = (color: string) =>
   webStyle({ backgroundImage: `radial-gradient(closest-side, ${color}, transparent)` });
 

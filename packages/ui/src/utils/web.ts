@@ -36,6 +36,7 @@ export interface WebOnlyStyle {
   position?: 'sticky' | 'fixed' | 'absolute' | 'relative';
   inset?: number | string;
   top?: number | string;
+  bottom?: number | string;
   textDecorationThickness?: string;
   textUnderlineOffset?: string;
   /** `clip` behaves like `hidden` but can't be scrolled programmatically (e.g. by focus). */

@@ -7,9 +7,15 @@
 export const globalCss = /* css */ `
 *,*::before,*::after{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%;text-size-adjust:100%;scroll-behavior:smooth;scroll-padding-top:88px}
-html,body{margin:0;padding:0;background-color:var(--kui-background);color:var(--kui-text)}
-body{min-height:100vh;min-height:100svh;overflow-x:hidden;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;text-rendering:optimizeLegibility;transition:background-color .3s ease}
-#root{display:flex;flex-direction:column;min-height:100vh;min-height:100svh}
+html,body{margin:0;padding:0;background-color:var(--kui-background);color:var(--kui-text);transition:background-color .3s ease}
+body{min-height:100vh;min-height:100svh;overflow-x:hidden;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;text-rendering:optimizeLegibility}
+#root{display:flex;flex-direction:column;min-height:100vh;min-height:100svh;background-color:var(--kui-background);transition:background-color .3s ease}
+/* The page's own surface is #root, so the document behind it can go dark
+   while the hero fills the screen: mobile Safari tints the status bar (and
+   overscroll) from the document background, which would otherwise leave a
+   light strip above the hero. The hero sets data-km-past-hero once it's
+   scrolled out of the way. */
+html:has([data-km-hero]):not([data-km-past-hero]),html:has([data-km-hero]):not([data-km-past-hero]) body{background-color:#0B0B0D}
 ::selection{background:var(--kui-accent-soft);color:var(--kui-text)}
 a{-webkit-tap-highlight-color:transparent}
 :focus:not(:focus-visible){outline:none}
@@ -33,7 +39,11 @@ a{-webkit-tap-highlight-color:transparent}
    across the top that fades out behind it; Ken's head, shoulders and upper
    arms stay in view while his lower half may sit behind the text. */
 @media (max-width:1023.98px){
-  [data-km-hero]{justify-content:center!important;padding-top:88px!important;padding-bottom:132px!important}
+  /* The hero is as tall as the viewport with the browser's toolbars
+     collapsed (100lvh), so nothing below it peeks out behind mobile Safari's
+     bottom toolbar; the extra bottom padding (100lvh - 100svh, the toolbar
+     area) keeps the intro centred in the part that's actually visible. */
+  [data-km-hero]{justify-content:center!important;padding-top:calc(88px + env(safe-area-inset-top))!important;padding-bottom:calc(132px + 100lvh - 100svh)!important}
   [data-km-hero-photo]{top:0;left:0;right:0;-webkit-mask-image:linear-gradient(to bottom,#000 62%,transparent);mask-image:linear-gradient(to bottom,#000 62%,transparent)}
 }
 /* Phones: centred horizontally. */
@@ -50,7 +60,7 @@ a{-webkit-tap-highlight-color:transparent}
    starts; the left of the photo fades out behind the text. */
 @media (min-width:1024px){
   [data-km-hero-photo]{
-    --km-hero-h:max(100svh,720px);
+    --km-hero-h:max(100lvh,720px);
     --km-text-end:calc(max(20px,50vw - 540px) + 620px);
     --km-content-right:calc(min(100vw,50vw + 560px) - 20px);
     --km-ken-x:max(calc(var(--km-text-end) + var(--km-hero-h) * 0.1125 + 24px),calc(var(--km-content-right) - 320px));

@@ -16,8 +16,9 @@ export default function Root({ children }: PropsWithChildren) {
         <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
         <meta name="color-scheme" content="light dark" />
-        <meta name="theme-color" media="(prefers-color-scheme: light)" content="#F7F6F3" />
-        <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0B0B0D" />
+        {/* No theme-color: Safari then tints its status bar and toolbars from the
+            document background, which stays dark while the hero fills the screen
+            (see styles/global.ts) and follows the theme toggle after that. */}
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
         <link rel="preload" as="image" href="/images/hero.jpg" fetchPriority="high" />
 
