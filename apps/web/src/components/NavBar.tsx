@@ -26,7 +26,13 @@ const NAV_LINKS = [
 
 const ON_DARK = '#F5F5F4';
 
-/** Floating nav: transparent over the hero, frosted glass once scrolled. */
+/**
+ * Floating nav: transparent over the hero, frosted glass once scrolled.
+ *
+ * The fixed wrapper is offset from the top edge (rather than padded) because
+ * Safari 26 tints its status bar from any full-width fixed element touching the
+ * top of the viewport; a transparent one there reads as plain white.
+ */
 export function NavBar() {
   const { colors } = useTheme();
   const insets = useSafeAreaInsets();
@@ -34,7 +40,7 @@ export function NavBar() {
   const foreground = solid ? colors.text : ON_DARK;
 
   return (
-    <View role="banner" style={[styles.wrap, { paddingTop: insets.top + space[3] }, fixedWeb]} pointerEvents="box-none">
+    <View role="banner" style={[styles.wrap, { top: insets.top + space[3] }, fixedWeb]} pointerEvents="box-none">
       <View
         role="navigation"
         aria-label="Primary"

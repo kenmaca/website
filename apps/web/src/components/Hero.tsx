@@ -63,6 +63,10 @@ export function Hero() {
           locations={[0, 0.6, 1]}
           style={StyleSheet.absoluteFill}
         />
+        {/* Phones: at the top of the page Safari fills the status bar with a flat
+            colour (the document background, ink while the hero is in view);
+            the photo and glow fade into it rather than stopping at a hard edge. */}
+        <View style={[styles.topFade, topFadeWeb]} {...responsive({ hideAbove: 'md' })} />
       </View>
 
       <Container style={styles.content}>
@@ -152,6 +156,9 @@ export function Hero() {
 // to stay in view above it.
 const heroHeightWeb = webStyle({ minHeight: '100lvh' });
 const notificationWeb = webStyle({ bottom: 'calc(24px + 100lvh - 100svh)' });
+const topFadeWeb = webStyle({
+  backgroundImage: `linear-gradient(${INK}, rgba(11, 11, 13, 0.82) 25%, rgba(11, 11, 13, 0.45) 55%, rgba(11, 11, 13, 0.14) 80%, rgba(11, 11, 13, 0))`,
+});
 const glowWeb = (color: string) =>
   webStyle({ backgroundImage: `radial-gradient(closest-side, ${color}, transparent)` });
 
@@ -170,6 +177,13 @@ const styles = StyleSheet.create({
   },
   backdrop: {
     overflow: 'hidden',
+  },
+  topFade: {
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    right: 0,
+    height: 120,
   },
   glow: {
     position: 'absolute',
