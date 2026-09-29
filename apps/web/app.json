@@ -1,0 +1,30 @@
+{
+  "expo": {
+    "name": "Kenneth Ma",
+    "slug": "kenma",
+    "version": "2.0.0",
+    "orientation": "portrait",
+    "scheme": "kenma",
+    "userInterfaceStyle": "automatic",
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "ca.kenma.portfolio"
+    },
+    "android": {
+      "package": "ca.kenma.portfolio"
+    },
+    "web": {
+      "bundler": "metro",
+      "output": "static"
+    },
+    "plugins": [
+      "expo-router",
+      "expo-status-bar",
+      "expo-font"
+    ],
+    "experiments": {
+      "typedRoutes": true,
+      "reactCompiler": true
+    }
+  }
+}

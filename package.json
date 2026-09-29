@@ -1,7 +1,22 @@
 {
-  "name": "kenneth-portfolio",
-  "version": "1.0.0",
+  "name": "kenma",
+  "private": true,
+  "version": "2.0.0",
+  "description": "Kenneth Ma's personal website — an Expo (React Native Web) monorepo.",
+  "license": "UNLICENSED",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "engines": {
+    "node": ">=22.13.0"
+  },
   "scripts": {
-    "build": "echo 'Static HTML site - no build required' && exit 0"
+    "dev": "npm run dev --workspace @kenma/web",
+    "build": "npm run build --workspace @kenma/web",
+    "preview": "npm run preview --workspace @kenma/web",
+    "typecheck": "npm run typecheck --workspaces --if-present",
+    "lint": "npm run lint --workspaces --if-present",
+    "check": "npm run typecheck && npm run lint"
   }
 }
