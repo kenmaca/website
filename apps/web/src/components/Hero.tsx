@@ -151,11 +151,12 @@ export function Hero() {
   );
 }
 
-// Toolbars-collapsed height, so nothing below peeks out behind mobile Safari's
-// bottom toolbar; the notification is lifted by the toolbar's area (100lvh - 100svh)
-// to stay in view above it.
-const heroHeightWeb = webStyle({ minHeight: '100lvh' });
-const notificationWeb = webStyle({ bottom: 'calc(24px + 100lvh - 100svh)' });
+// Toolbars-collapsed height plus a bleed on phones (see `--km-hero-bleed` in
+// styles/global.ts), so nothing below peeks out behind mobile Safari's bottom
+// toolbar. The notification is lifted by everything below 100svh (the visible
+// height above the toolbar) to stay in view.
+const heroHeightWeb = webStyle({ minHeight: 'calc(100lvh + var(--km-hero-bleed, 0px))' });
+const notificationWeb = webStyle({ bottom: 'calc(24px + 100lvh - 100svh + var(--km-hero-bleed, 0px))' });
 const topFadeWeb = webStyle({
   backgroundImage: `linear-gradient(${INK}, rgba(11, 11, 13, 0.82) 25%, rgba(11, 11, 13, 0.45) 55%, rgba(11, 11, 13, 0.14) 80%, rgba(11, 11, 13, 0))`,
 });

@@ -39,16 +39,20 @@ a{-webkit-tap-highlight-color:transparent}
    across the top that fades out behind it; Ken's head, shoulders and upper
    arms stay in view while his lower half may sit behind the text. */
 @media (max-width:1023.98px){
-  /* The hero is as tall as the viewport with the browser's toolbars
-     collapsed (100lvh), so nothing below it peeks out behind mobile Safari's
-     bottom toolbar; the extra bottom padding (100lvh - 100svh, the toolbar
-     area) keeps the intro centred in the part that's actually visible. */
-  [data-km-hero]{justify-content:center!important;padding-top:calc(88px + env(safe-area-inset-top))!important;padding-bottom:calc(132px + 100lvh - 100svh)!important}
+  /* The hero is taller than the visible area (see --km-hero-bleed and
+     heroHeightWeb); the extra bottom padding (everything below 100svh, the
+     visible height above the toolbar) keeps the intro centred in the part
+     that's actually visible. */
+  [data-km-hero]{justify-content:center!important;padding-top:calc(88px + env(safe-area-inset-top))!important;padding-bottom:calc(132px + 100lvh - 100svh + var(--km-hero-bleed,0px))!important}
   [data-km-hero-photo]{top:0;left:0;right:0;-webkit-mask-image:linear-gradient(to bottom,#000 62%,transparent);mask-image:linear-gradient(to bottom,#000 62%,transparent)}
 }
 /* Phones: centred horizontally. */
 @media (max-width:767.98px){
-  [data-km-hero-photo]{height:44%;background-size:auto 160%;background-position:22% 63%}
+  /* Safari 26's layout viewport (even 100lvh) ends partway down its floating
+     address bar, with the screen continuing below it; the hero runs this far
+     past it so the page beneath never shows through the bottom of the bar. */
+  [data-km-hero]{--km-hero-bleed:96px}
+  [data-km-hero-photo]{height:calc((100% - var(--km-hero-bleed)) * .44);background-size:auto 160%;background-position:22% 63%}
 }
 /* Tablets: in the space to the right of the name, above the intro. */
 @media (min-width:768px) and (max-width:1023.98px){
