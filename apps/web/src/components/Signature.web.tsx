@@ -17,7 +17,7 @@ export function Signature({ width = 240, color = '#FFFFFF' }: { width?: number; 
       style={{ color, overflow: 'visible', display: 'block', opacity: 0.9 }}
     >
       {signaturePaths.map(({ id, d }) => (
-        <path key={id} data-stroke={id} d={d} />
+        <path key={id} data-stroke={id} d={d} pathLength={1} />
       ))}
     </svg>
   );

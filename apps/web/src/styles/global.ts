@@ -80,23 +80,27 @@ a{-webkit-tap-highlight-color:transparent}
    over it. */
 @media (min-width:1024px){[data-km-sticky]{position:sticky!important;top:112px}}
 
-/* Signature: each stroke draws in sequence, like the original site */
+/* Signature: each stroke draws in sequence, like the original site. Every
+   path has pathLength="1", so one dash pattern fits them all: a dash covering
+   the whole stroke followed by a longer gap, so no part of a stroke can fall
+   into the next dash (and flash) while it's hidden. The hidden state is also
+   the base style, in case a frame paints before the animation applies. */
 [data-km-signature] path{fill:none;stroke:currentColor;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10}
-[data-km-signature] [data-stroke]{animation-duration:2.4s;animation-delay:1.1s;animation-fill-mode:both;animation-iteration-count:1}
-[data-stroke="s"]{stroke-dasharray:470;animation-name:km-sig-s;animation-timing-function:ease-in}
-[data-stroke="dot"]{stroke-dasharray:2;animation-name:km-sig-dot;animation-timing-function:linear}
-[data-stroke="letters"]{stroke-width:4!important;stroke-dasharray:205;animation-name:km-sig-letters;animation-timing-function:ease-in-out}
-[data-stroke="m"]{stroke-width:4!important;stroke-dasharray:177;animation-name:km-sig-m;animation-timing-function:ease-in}
-[data-stroke="a"]{stroke-dasharray:72;animation-name:km-sig-a;animation-timing-function:ease-in}
-[data-stroke="k"]{stroke-dasharray:60;animation-name:km-sig-k;animation-timing-function:ease-in}
+[data-km-signature] [data-stroke]{stroke-dasharray:1 2;stroke-dashoffset:1;opacity:0;animation-duration:2.4s;animation-delay:1.1s;animation-fill-mode:both;animation-iteration-count:1}
+[data-stroke="s"]{animation-name:km-sig-s;animation-timing-function:ease-in}
+[data-stroke="dot"]{animation-name:km-sig-dot;animation-timing-function:linear}
+[data-stroke="letters"]{stroke-width:4!important;animation-name:km-sig-letters;animation-timing-function:ease-in-out}
+[data-stroke="m"]{stroke-width:4!important;animation-name:km-sig-m;animation-timing-function:ease-in}
+[data-stroke="a"]{animation-name:km-sig-a;animation-timing-function:ease-in}
+[data-stroke="k"]{animation-name:km-sig-k;animation-timing-function:ease-in}
 /* Each path stays invisible until its turn: round line caps would otherwise
    render a dot at the start of an undrawn stroke. */
-@keyframes km-sig-s{0%{stroke-dashoffset:470;opacity:0}.1%{opacity:1}30%,100%{stroke-dashoffset:0;opacity:1}}
-@keyframes km-sig-dot{0%,30%{stroke-dashoffset:2;opacity:0}30.1%{opacity:1}35%,100%{stroke-dashoffset:0;opacity:1}}
-@keyframes km-sig-letters{0%,35%{stroke-dashoffset:205;opacity:0}35.1%{opacity:1}75%,100%{stroke-dashoffset:0;opacity:1}}
-@keyframes km-sig-m{0%,75%{stroke-dashoffset:177;opacity:0}75.1%{opacity:1}85%,100%{stroke-dashoffset:0;opacity:1}}
-@keyframes km-sig-a{0%,85%{stroke-dashoffset:72;opacity:0}85.1%{opacity:1}95%,100%{stroke-dashoffset:0;opacity:1}}
-@keyframes km-sig-k{0%,95%{stroke-dashoffset:60;opacity:0}95.1%{opacity:1}100%{stroke-dashoffset:0;opacity:1}}
+@keyframes km-sig-s{0%{stroke-dashoffset:1;opacity:0}.1%{opacity:1}30%,100%{stroke-dashoffset:0;opacity:1}}
+@keyframes km-sig-dot{0%,30%{stroke-dashoffset:1;opacity:0}30.1%{opacity:1}35%,100%{stroke-dashoffset:0;opacity:1}}
+@keyframes km-sig-letters{0%,35%{stroke-dashoffset:1;opacity:0}35.1%{opacity:1}75%,100%{stroke-dashoffset:0;opacity:1}}
+@keyframes km-sig-m{0%,75%{stroke-dashoffset:1;opacity:0}75.1%{opacity:1}85%,100%{stroke-dashoffset:0;opacity:1}}
+@keyframes km-sig-a{0%,85%{stroke-dashoffset:1;opacity:0}85.1%{opacity:1}95%,100%{stroke-dashoffset:0;opacity:1}}
+@keyframes km-sig-k{0%,95%{stroke-dashoffset:1;opacity:0}95.1%{opacity:1}100%{stroke-dashoffset:0;opacity:1}}
 
 @media (prefers-reduced-motion: reduce){
   html{scroll-behavior:auto}
